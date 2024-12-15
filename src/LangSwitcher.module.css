@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+}
+
+.switcher {
+  background-color: rgb(126, 126, 196);
+  border: solid rgb(66, 66, 106) 1px;
+}
+
+.switcher:hover {
+  background-color: rgb(66, 66, 106);
+  color: white;
+}
