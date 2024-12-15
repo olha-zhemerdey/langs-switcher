@@ -14,7 +14,7 @@ export function LoginForm() {
     });
   };
 
-  const handleSumit = (evt) => {
+  const handleSubmit = (evt) => {
     evt.preventDefault();
     console.log(values);
     setValues({
@@ -24,7 +24,7 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSumit} className={css.loginForm}>
+    <form onSubmit={handleSubmit} className={css.loginForm}>
       <h2>Login Form</h2>
       <div>
         <label>
