@@ -15,3 +15,11 @@
 .span {
   color: rgb(100, 0, 239);
 }
+
+.coffeeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}

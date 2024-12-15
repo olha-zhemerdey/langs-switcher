@@ -5,13 +5,61 @@ import css from "./App.module.css";
 
 export default function App() {
   const [lang, setLang] = useState("uk");
+  const [coffeeSize, setCoffeeSize] = useState("sm");
+
+  const handleSizeChange = (evt) => {
+    setCoffeeSize(evt.target.value);
+  };
 
   return (
     <div className={css.wrapper}>
-      <p className={css.title}>
-        Selected language: <span className={css.span}>{lang}</span>
-      </p>
-      <LangSwitcher value={lang} onSelect={setLang} />
+      {/* Вибір мови */}
+      <div>
+        <p className={css.title}>
+          Selected language: <span className={css.span}>{lang}</span>
+        </p>
+        <LangSwitcher value={lang} onSelect={setLang} />
+      </div>
+
+      {/* Вибір розміру кави */}
+      <div className={css.coffeeWrapper}>
+        <h1>Select coffee size</h1>
+        <div className="options">
+          <label>
+            <input
+              type="radio"
+              name="coffeeSize"
+              value="sm"
+              checked={coffeeSize === "sm"}
+              onChange={handleSizeChange}
+            />
+            Small
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="coffeeSize"
+              value="md"
+              checked={coffeeSize === "md"}
+              onChange={handleSizeChange}
+            />
+            Medium
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="coffeeSize"
+              value="lg"
+              checked={coffeeSize === "lg"}
+              onChange={handleSizeChange}
+            />
+            Large
+          </label>
+        </div>
+        <p>
+          <b>Selected size:</b> {coffeeSize}
+        </p>
+      </div>
     </div>
   );
 }
