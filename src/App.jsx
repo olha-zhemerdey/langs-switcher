@@ -6,9 +6,14 @@ import css from "./App.module.css";
 export default function App() {
   const [lang, setLang] = useState("uk");
   const [coffeeSize, setCoffeeSize] = useState("sm");
+  const [hasAccepted, setHasAccepted] = useState(false);
 
   const handleSizeChange = (evt) => {
     setCoffeeSize(evt.target.value);
+  };
+
+  const handleCheckboxChange = (evt) => {
+    setHasAccepted(evt.target.checked);
   };
 
   return (
@@ -59,6 +64,22 @@ export default function App() {
         <p>
           <b>Selected size:</b> {coffeeSize}
         </p>
+      </div>
+
+      {/* Чекбокс з умовами */}
+      <div className={css.checkboxWrapper}>
+        <label>
+          <input
+            type="checkbox"
+            name="terms"
+            checked={hasAccepted}
+            onChange={handleCheckboxChange}
+          />
+          I accept terms and conditions
+        </label>
+        <button type="button" disabled={!hasAccepted}>
+          Proceed
+        </button>
       </div>
     </div>
   );
